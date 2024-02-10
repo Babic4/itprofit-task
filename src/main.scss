@@ -1,0 +1,238 @@
+$transition-base: 0.25s cubic-bezier(0.65, 0, 0.35, 1);
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0 solid transparent;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
+textarea {
+	resize: none;
+}
+
+textarea:focus,
+input:focus {
+	outline: none;
+}
+
+body {
+	min-height: 100vh;
+	height: 100vh;
+	line-height: 1;
+	text-rendering: optimizeSpeed;
+	font-size: 22px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#app {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	background-size: cover;
+	background-image: url('./assets/bg.jpg');
+
+	.contact-box {
+		width: 480px;
+		border-radius: 1.5rem;
+		border: 1px solid rgba(255, 255, 255, 0.4);
+		background: rgba(255, 255, 255, 0.2);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(12px);
+		color: white;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		padding: 2.5rem;
+		display: flex;
+
+		.contact-form {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 2rem;
+
+			.header-form {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
+				h3 {
+					font-size: 1.4rem;
+				}
+
+				.btn-info {
+					cursor: pointer;
+					background-color: transparent;
+					padding: 0.2rem;
+					height: 1.6rem;
+					width: 1.6rem;
+					border-radius: 50%;
+					transition: all $transition-base;
+
+					&:hover {
+						background-color: rgba(255, 255, 255, 0.2);
+					}
+				}
+			}
+
+			.inputs-box {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				gap: 0.6rem;
+
+				.form-field {
+					display: flex;
+					flex-direction: column;
+					gap: 0.4rem;
+
+					label {
+						color: white;
+						font-size: 0.75rem;
+					}
+
+					input,
+					textarea {
+						color: white;
+						background-color: transparent;
+						border: 1px solid rgba(255, 255, 255, 0.7);
+						border-radius: 0.5rem;
+						padding: 0.5rem 1rem;
+						font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+						&::placeholder {
+							color: rgba(255, 255, 255, 0.7);
+						}
+
+						&:focus {
+							border: 1px solid white;
+							outline: 3px solid rgba(255, 255, 255, 0.3);
+
+							&::placeholder {
+								color: white;
+							}
+						}
+					}
+
+					&.error {
+						input,
+						textarea {
+							border: 1px solid #ff3333;
+						}
+					}
+
+					.error-message {
+						font-size: 0.75rem;
+						color: #ff3333;
+					}
+				}
+			}
+
+			.bottom-form {
+				display: flex;
+				align-items: center;
+				gap: 2rem;
+
+				.btn-send {
+					background-color: white;
+					border-radius: 0.9rem;
+					color: black;
+					cursor: pointer;
+					font-size: 0.9rem;
+					padding: 0.7rem 1.2rem;
+					font-weight: 600;
+					transition: all $transition-base;
+
+					&:hover {
+						box-shadow: 4px 4px 0 -1px rgba(255, 255, 255, 0.6);
+						transform: translate(-4px, -4px);
+					}
+				}
+
+				.response-message {
+					font-size: 0.8rem;
+
+					&.success {
+						border-radius: 0.5rem;
+						padding: 0.25rem 0.5rem;
+						background-color: #22bb33;
+						color: white;
+					}
+
+					&.error {
+						border-radius: 0.5rem;
+						padding: 0.25rem 0.5rem;
+						background-color: #ff3333;
+						color: black;
+					}
+				}
+			}
+		}
+	}
+}
+
+.popup-mask {
+	z-index: -10;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	backdrop-filter: blur(12px);
+	opacity: 0;
+	transition: all $transition-base;
+
+	&.show {
+		opacity: 1;
+		z-index: 100;
+
+		.popup-box {
+			transform: translateY(0);
+		}
+	}
+
+	.popup-box {
+		color: black;
+		background-color: white;
+		width: 480px;
+		border-radius: 1.5rem;
+		padding: 2.5rem;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		gap: 0.6rem;
+		transition: all $transition-base;
+		transform: translateY(700px);
+
+		h3 {
+			font-size: 1.2rem;
+		}
+
+		p {
+			font-size: 0.9rem;
+			width: 100%;
+			line-height: 1.1rem;
+		}
+	}
+}

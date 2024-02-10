@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app">
+			<!-- popup -->
+			<div id="popup" class="popup-mask">
+				<div class="popup-box">
+					<h3>Info</h3>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
+						voluptatum fugit repellendus magni numquam dolores quaerat tempora
+						dolor atque facilis.
+					</p>
+				</div>
+			</div>
+			<!-- form -->
+			<div class="contact-box">
+				<form id="contact-form" class="contact-form">
+					<div class="header-form">
+						<h3>Contact Us</h3>
+						<button id="btn-info" class="btn-info">
+							<?xml version="1.0" encoding="UTF-8"?><svg
+								stroke-width="1.3"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								color="#ffffff"
+							>
+								<path
+									d="M12 11.5V16.5"
+									stroke="#ffffff"
+									stroke-width="1.3"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								></path>
+								<path
+									d="M12 7.51L12.01 7.49889"
+									stroke="#ffffff"
+									stroke-width="1.3"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								></path>
+								<path
+									d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+									stroke="#ffffff"
+									stroke-width="1.3"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								></path>
+							</svg>
+						</button>
+					</div>
+					<div class="inputs-box">
+						<div class="form-field">
+							<label for="name">Name</label>
+							<input id="name" type="text" placeholder="Name" />
+							<span class="error-message"></span>
+						</div>
+						<div class="form-field">
+							<label for="email">Email</label>
+							<input id="email" type="email" placeholder="Email" />
+							<span class="error-message"></span>
+						</div>
+						<div class="form-field">
+							<label for="phone">Phone</label>
+							<input
+								id="phone"
+								type="text"
+								id="phone-input"
+								placeholder="+375(__)___-__-__"
+							/>
+							<span class="error-message"></span>
+						</div>
+						<div class="form-field">
+							<label for="message">Message</label>
+							<textarea id="message" rows="5" placeholder="Message"></textarea>
+							<span class="error-message"></span>
+						</div>
+					</div>
+					<div class="bottom-form">
+						<button class="btn-send" type="submit">Send</button>
+						<div id="response-message" class="response-message"></div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
